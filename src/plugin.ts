@@ -63,7 +63,8 @@ export function sassPlugin(options: SassPluginOptions = {}): Plugin {
 
         onLoad({filter: /./, namespace}, ({path})=>({
           contents: cssChunks[path],
-          loader: 'css'
+          loader: 'css',
+          resolveDir: dirname(path)
         }))
       }
 
